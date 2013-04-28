@@ -1,0 +1,126 @@
+
+@turquoise: #1ABC9C;
+@turquoise_d: #16A085;
+
+@emarald: #2ECC71;
+@emarald_d: #27AE60;
+
+@blue: #3498DB;
+@blue_d: #2980B9;
+
+@amethyst: #9B59B6;
+@amethyst: #8E44AD;
+
+@asphalt: #34495E;
+@asphalt_d: #2C3E50;
+
+@sunflower: #F1C40F;
+@sunflower_d: #F39C12;
+
+@carrot: #E67E22;
+@carrot_d: #D35400;
+
+@red: #E74C3C;
+@red_d: #C0392B;
+
+@silver: #ECF0F1;
+@silver_d: #BDC3C7;
+
+@gray: #95A5A6;
+@gray_d: #7F8C8D;
+
+body {
+  font-family: 'Lato';
+  background: @silver;
+  color: @silver;
+  margin: 0;
+  padding: 0;
+}
+
+#page-count{
+  background: @asphalt;
+}
+
+#error-count{
+  background: @red_d;
+}
+
+#response-time {
+  background: @blue_d;
+}
+
+.box {
+  @pad: 0.618rem;
+  position: absolute;
+  left: @pad;
+  top: @pad;
+  bottom: @pad;
+  right: @pad;
+  box-sizing: border-box;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.reading {
+  text-align: right;
+  font-size: 15vh;
+  line-height: 1;  
+  vertical-align: middle;
+  padding: 0vh 1vh;
+}
+
+.labels {
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.235rem; 
+  margin: 0;
+  padding: 0.381rem;
+  font-size: 3vw;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.title {
+  text-transform: uppercase;
+  
+}
+
+#error-list {
+  color: @red_d;
+  font-size: 1.618rem;
+}
+
+#perf-list {
+  color: @blue_d;
+  font-size: 1.618rem;
+}
+
+#run-button {
+  text-align: center;    
+  background: @carrot_d;
+  .title, .reading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;    
+  }
+  .title {
+    font-size: 2.618rem;    
+    bottom: 50%;    
+    padding: 2.618rem 0;    
+    border-bottom: thick solid @silver;
+  }
+  .reading {    
+    top: 50%;    
+    padding: 1.618rem 0;
+    font-size: 3.618rem;
+  }
+}

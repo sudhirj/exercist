@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: exercist_development
+  host: localhost
+  username: sudhirjonathan
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: exercist_test
+  host: localhost
+  username: sudhirjonathan
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: exercist_production
+  host: localhost
+  username: sudhirjonathan
+
+
