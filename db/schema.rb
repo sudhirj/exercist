@@ -14,6 +14,11 @@
 ActiveRecord::Schema.define(version: 20130427154925) do
 
   create_table "pages", force: true do |t|
+    t.integer  "site_id"
+    t.string   "title"
+    t.string   "path"
+    t.integer  "status"
+    t.integer  "response_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

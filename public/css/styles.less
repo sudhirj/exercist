@@ -37,6 +37,10 @@ body {
   padding: 0;
 }
 
+div {
+  line-height: 1;
+}
+
 #page-count{
   background: @asphalt;
 }
@@ -90,12 +94,20 @@ body {
 
 .title {
   text-transform: uppercase;
+  font-size: 1.618rem;
+  line-height: 1;
   
 }
 
 #error-list {
   color: @red_d;
   font-size: 1.618rem;
+  a {
+    display: block;
+    margin: 1.618rem 0;
+    color: @red_d;
+    font-size: 2.618rem;
+  }
 }
 
 #perf-list {
@@ -115,12 +127,18 @@ body {
   .title {
     font-size: 2.618rem;    
     bottom: 50%;    
-    padding: 2.618rem 0;    
+    padding: 1.618rem 0;    
     border-bottom: thick solid @silver;
+    cursor: pointer;
   }
   .reading {    
     top: 50%;    
     padding: 1.618rem 0;
     font-size: 3.618rem;
+  }
+  .labels {
+    font-size: 1.618rem;
+    padding: 0.618rem;
+    line-height: 1.168;
   }
 }
