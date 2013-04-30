@@ -7,7 +7,7 @@ class SitesController < ApplicationController
 
   def show
     site_id = params[:id]
-    root = Site.find(site_id).root
+    root = URI.parse(Site.find(site_id).root).host
     page_count = Page.where(site_id: site_id).count
     pages_remaining_count = Page.where(status: nil, site_id: site_id).count
     errors = Page.where('status > 399').where(site_id: site_id).to_a.map do |page|
