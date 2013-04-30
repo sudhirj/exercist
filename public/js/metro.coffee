@@ -26,7 +26,7 @@ MetroMan = (container) ->
             height = p((item.height * cellHeight) + ((item.height - 1) * verticalMargin))
             top = p((item.position.y * cellHeight) + ((item.position.y + 1) * verticalMargin))
             left = p((item.position.x * cellWidth) + ((item.position.x + 1) * horizontalMargin))
-            cell = $('<div>').css({top: top, left: left, width: width, height: height, position: 'absolute', 'overflow': 'hidden'}).append($(item.view)).addClass('metro')            
+            cell = $('<div>').css({top: top, left: left, width: width, height: height, position: 'absolute', 'overflow-y': 'auto'}).append($(item.view)).addClass('metro')            
             $(container).append(cell)
 
     return this

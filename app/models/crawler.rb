@@ -39,9 +39,9 @@ class Crawler
   end
 
   def self.queue(page)
-    return if $redis.sismember 'queued', page.id.to_s
+    return if $redis.sismember "queued-#{page.site.id}", page.id.to_s
     Resque.enqueue(Crawler, page.id) if not page.already_crawled?
-    $redis.sadd 'queued', page.id.to_s
+    $redis.sadd "queued-#{page.site.id}", page.id.to_s
   end
 
   def self.reject_uncrawlables(hrefs, root)
