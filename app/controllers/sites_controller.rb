@@ -10,7 +10,7 @@ class SitesController < ApplicationController
     root = Site.find(site_id).root
     page_count = Page.where(site_id: site_id).count
     pages_remaining_count = Page.where(status: nil, site_id: site_id).count
-    errors = Page.where('status > 399').to_a.map do |page|
+    errors = Page.where('status > 399').where(site_id: site_id).to_a.map do |page|
       {
         url: page.url,
         path: page.path
