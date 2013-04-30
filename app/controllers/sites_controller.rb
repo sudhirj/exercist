@@ -9,7 +9,7 @@ class SitesController < ApplicationController
     site_id = params[:id]
     root = Site.find(site_id).root
     page_count = Page.where(site_id: site_id).count
-    pages_remaining_count = Page.where(status: nil).count
+    pages_remaining_count = Page.where(status: nil, site_id: site_id).count
     errors = Page.where('status > 399').to_a.map do |page|
       {
         url: page.url,
@@ -29,7 +29,7 @@ class SitesController < ApplicationController
   def start            
     Page.where(site_id: params[:site_id]).delete_all
     Page.where(site_id: nil).delete_all
-    $redis.del "queued-#{params[:site_id]}"
+    $redis.del "queue#{params[:site_id]}"
     root_page = Page.where(site_id: params[:site_id], path: '/').first_or_create
     Resque.enqueue Crawler, root_page.id    
   end
